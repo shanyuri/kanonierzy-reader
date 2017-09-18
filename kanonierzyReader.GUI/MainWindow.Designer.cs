@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.commentsPageTextBox = new System.Windows.Forms.TextBox();
             this.commentsLabel1 = new System.Windows.Forms.Label();
@@ -41,15 +41,15 @@
             this.commentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.commentsPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.commentsDownloadBtn = new System.Windows.Forms.Button();
-            this.commentsPrevPageBtn = new System.Windows.Forms.Button();
-            this.commentsNextPageBtn = new System.Windows.Forms.Button();
+            this.commentsDownloadBtn = new kanonierzyReader.GUI.NoFocusCueButton();
+            this.commentsPrevPageBtn = new kanonierzyReader.GUI.NoFocusCueButton();
+            this.commentsNextPageBtn = new kanonierzyReader.GUI.NoFocusCueButton();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.mainNewsDetailsPanel = new System.Windows.Forms.Panel();
-            this.mainNewsBrowserBtn = new System.Windows.Forms.Button();
-            this.mainNewsRefreshBtn = new System.Windows.Forms.Button();
+            this.mainNewsBrowserBtn = new kanonierzyReader.GUI.NoFocusCueButton();
+            this.mainNewsRefreshBtn = new kanonierzyReader.GUI.NoFocusCueButton();
             this.mainNewsLabel1 = new System.Windows.Forms.Label();
             this.mainNewsLabel2 = new System.Windows.Forms.Label();
             this.mainNewsLabel3 = new System.Windows.Forms.Label();
@@ -66,9 +66,9 @@
             this.newsMonthComboBox2 = new System.Windows.Forms.ComboBox();
             this.newsLabel3 = new System.Windows.Forms.Label();
             this.newsPageTextBox = new System.Windows.Forms.TextBox();
-            this.newsDownloadBtn = new System.Windows.Forms.Button();
-            this.newsPrevPageBtn = new System.Windows.Forms.Button();
-            this.newsNextPageBtn = new System.Windows.Forms.Button();
+            this.newsDownloadBtn = new kanonierzyReader.GUI.NoFocusCueButton();
+            this.newsPrevPageBtn = new kanonierzyReader.GUI.NoFocusCueButton();
+            this.newsNextPageBtn = new kanonierzyReader.GUI.NoFocusCueButton();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.tabsPanel = new System.Windows.Forms.Panel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -109,10 +109,10 @@
             // 
             // commentsGrid
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.commentsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.commentsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.commentsGrid.AutoGenerateColumns = false;
             this.commentsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.commentsGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -160,8 +160,8 @@
             // 
             this.contentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.contentDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.contentDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.contentDataGridViewTextBoxColumn.HeaderText = "Content";
             this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
             // 
@@ -194,6 +194,7 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(902, 41);
             this.flowLayoutPanel2.TabIndex = 12;
+            this.toolTip.SetToolTip(this.flowLayoutPanel2, "Press right arrow");
             // 
             // commentsDownloadBtn
             // 
@@ -208,6 +209,7 @@
             this.commentsDownloadBtn.Size = new System.Drawing.Size(145, 32);
             this.commentsDownloadBtn.TabIndex = 9;
             this.commentsDownloadBtn.Text = "Download";
+            this.toolTip.SetToolTip(this.commentsDownloadBtn, "Press spacebar");
             this.commentsDownloadBtn.UseVisualStyleBackColor = true;
             this.commentsDownloadBtn.Click += new System.EventHandler(this.CommentsDownloadBtn_Click);
             // 
@@ -223,6 +225,7 @@
             this.commentsPrevPageBtn.Size = new System.Drawing.Size(145, 32);
             this.commentsPrevPageBtn.TabIndex = 10;
             this.commentsPrevPageBtn.Text = "Prev Page";
+            this.toolTip.SetToolTip(this.commentsPrevPageBtn, "Press Z Key");
             this.commentsPrevPageBtn.UseVisualStyleBackColor = true;
             this.commentsPrevPageBtn.Click += new System.EventHandler(this.CommentsPrevPageBtn_Click);
             // 
@@ -238,6 +241,7 @@
             this.commentsNextPageBtn.Size = new System.Drawing.Size(145, 32);
             this.commentsNextPageBtn.TabIndex = 11;
             this.commentsNextPageBtn.Text = "Next Page";
+            this.toolTip.SetToolTip(this.commentsNextPageBtn, "Press X Key");
             this.commentsNextPageBtn.UseVisualStyleBackColor = true;
             this.commentsNextPageBtn.Click += new System.EventHandler(this.CommentsNextPageBtn_Click);
             // 
@@ -311,7 +315,7 @@
             this.mainNewsBrowserBtn.Name = "mainNewsBrowserBtn";
             this.mainNewsBrowserBtn.Size = new System.Drawing.Size(45, 35);
             this.mainNewsBrowserBtn.TabIndex = 4;
-            this.toolTip.SetToolTip(this.mainNewsBrowserBtn, "Open Main News In Browser");
+            this.toolTip.SetToolTip(this.mainNewsBrowserBtn, "Open Main News In Browser (Press O)");
             this.mainNewsBrowserBtn.UseVisualStyleBackColor = true;
             this.mainNewsBrowserBtn.Click += new System.EventHandler(this.MainNewsBrowserBtn_Click);
             // 
@@ -325,7 +329,7 @@
             this.mainNewsRefreshBtn.Name = "mainNewsRefreshBtn";
             this.mainNewsRefreshBtn.Size = new System.Drawing.Size(45, 35);
             this.mainNewsRefreshBtn.TabIndex = 3;
-            this.toolTip.SetToolTip(this.mainNewsRefreshBtn, "Refresh Main News");
+            this.toolTip.SetToolTip(this.mainNewsRefreshBtn, "Refresh Main News (F5)");
             this.mainNewsRefreshBtn.UseVisualStyleBackColor = true;
             this.mainNewsRefreshBtn.Click += new System.EventHandler(this.MainNewsRefreshBtn_Click);
             // 
@@ -422,11 +426,11 @@
             this.tabPage2.Controls.Add(this.flowLayoutPanel1);
             this.tabPage2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabPage2.ImageIndex = 1;
-            this.tabPage2.Location = new System.Drawing.Point(4, 54);
+            this.tabPage2.Location = new System.Drawing.Point(4, 51);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(894, 242);
+            this.tabPage2.Size = new System.Drawing.Size(894, 245);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ARCHIVE";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -440,7 +444,7 @@
             this.newsListBox.Location = new System.Drawing.Point(4, 40);
             this.newsListBox.Margin = new System.Windows.Forms.Padding(4);
             this.newsListBox.Name = "newsListBox";
-            this.newsListBox.Size = new System.Drawing.Size(886, 198);
+            this.newsListBox.Size = new System.Drawing.Size(886, 201);
             this.newsListBox.TabIndex = 7;
             this.toolTip.SetToolTip(this.newsListBox, "double click to open news details");
             this.newsListBox.SelectedIndexChanged += new System.EventHandler(this.NewsListBox_SelectedIndexChanged);
@@ -545,6 +549,7 @@
             this.newsDownloadBtn.Size = new System.Drawing.Size(145, 32);
             this.newsDownloadBtn.TabIndex = 4;
             this.newsDownloadBtn.Text = "Download";
+            this.toolTip.SetToolTip(this.newsDownloadBtn, "Press D Key");
             this.newsDownloadBtn.UseVisualStyleBackColor = true;
             this.newsDownloadBtn.Click += new System.EventHandler(this.NewsDownloadBtn_Click);
             // 
@@ -560,6 +565,7 @@
             this.newsPrevPageBtn.Size = new System.Drawing.Size(145, 32);
             this.newsPrevPageBtn.TabIndex = 5;
             this.newsPrevPageBtn.Text = "Prev Page";
+            this.toolTip.SetToolTip(this.newsPrevPageBtn, "Press A key");
             this.newsPrevPageBtn.UseVisualStyleBackColor = true;
             this.newsPrevPageBtn.Click += new System.EventHandler(this.NewsPrevPage_Click);
             // 
@@ -575,6 +581,7 @@
             this.newsNextPageBtn.Size = new System.Drawing.Size(145, 32);
             this.newsNextPageBtn.TabIndex = 6;
             this.newsNextPageBtn.Text = "Next Page";
+            this.toolTip.SetToolTip(this.newsNextPageBtn, "Press S key");
             this.newsNextPageBtn.UseVisualStyleBackColor = true;
             this.newsNextPageBtn.Click += new System.EventHandler(this.NewsNextPage_Click);
             // 
@@ -604,11 +611,13 @@
             this.Controls.Add(this.tabsPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(920, 500);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "kanonierzyReader - browse news and comments";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.commentsGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).EndInit();
             this.commentsPanel.ResumeLayout(false);
@@ -630,7 +639,7 @@
 
         #endregion
         private System.Windows.Forms.DataGridView commentsGrid;
-        private System.Windows.Forms.Button commentsDownloadBtn;
+        private NoFocusCueButton commentsDownloadBtn;
         private System.Windows.Forms.TextBox commentsPageTextBox;
         private System.Windows.Forms.Label commentsLabel1;
         private System.Windows.Forms.BindingSource commentBindingSource;
@@ -641,12 +650,12 @@
         private System.Windows.Forms.ListBox newsListBox;
         private System.Windows.Forms.Label newsLabel2;
         private System.Windows.Forms.Label newsLabel3;
-        private System.Windows.Forms.Button newsDownloadBtn;
+        private NoFocusCueButton newsDownloadBtn;
         private System.Windows.Forms.TextBox newsPageTextBox;
         private System.Windows.Forms.Label newsLabel1;
         private System.Windows.Forms.Panel tabsPanel;
-        private System.Windows.Forms.Button commentsPrevPageBtn;
-        private System.Windows.Forms.Button commentsNextPageBtn;
+        private NoFocusCueButton commentsPrevPageBtn;
+        private NoFocusCueButton commentsNextPageBtn;
         private System.Windows.Forms.ComboBox newsYearComboBox1;
         private System.Windows.Forms.TextBox mainNewsContentTextBox;
         private System.Windows.Forms.Label mainNewsLabel3;
@@ -655,16 +664,16 @@
         private System.Windows.Forms.Label mainNewsLabel1;
         private System.Windows.Forms.Label mainNewsLabel2;
         private System.Windows.Forms.TextBox mainNewsTitleTextBox;
-        private System.Windows.Forms.Button mainNewsRefreshBtn;
+        private NoFocusCueButton mainNewsRefreshBtn;
         private System.Windows.Forms.ComboBox newsMonthComboBox2;
         private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button newsNextPageBtn;
-        private System.Windows.Forms.Button newsPrevPageBtn;
+        private NoFocusCueButton newsNextPageBtn;
+        private NoFocusCueButton newsPrevPageBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdAtDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn authorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button mainNewsBrowserBtn;
+        private NoFocusCueButton mainNewsBrowserBtn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.ToolTip toolTip;

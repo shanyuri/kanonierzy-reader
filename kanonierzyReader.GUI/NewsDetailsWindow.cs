@@ -30,6 +30,18 @@ namespace kanonierzyReader.GUI
         {
             System.Diagnostics.Process.Start(NewsUrl);
         }
+        private void NewsDetailsWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.O:
+                    newsBrowserBtn.PerformClick();
+                    break;
+                case Keys.Escape:
+                    this.Close();
+                    break;
+            }
+        }
         #endregion
     }
 }

@@ -98,7 +98,7 @@
             this.newsBrowserBtn.Name = "newsBrowserBtn";
             this.newsBrowserBtn.Size = new System.Drawing.Size(45, 35);
             this.newsBrowserBtn.TabIndex = 2;
-            this.toolTip.SetToolTip(this.newsBrowserBtn, "Open News In Browser");
+            this.toolTip.SetToolTip(this.newsBrowserBtn, "Open News In Browser (Press O)");
             this.newsBrowserBtn.UseVisualStyleBackColor = true;
             this.newsBrowserBtn.Click += new System.EventHandler(this.NewsBrowserBtn_Click);
             // 
@@ -173,9 +173,11 @@
             this.Controls.Add(this.label6);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "NewsDetailsWindow";
             this.Text = "kanonierzyReader - News Details";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NewsDetailsWindow_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -24,6 +24,7 @@ namespace kanonierzyReader.GUI
             InitializeComponent();
             InitializeMainNews();
             InitNewsArchiveFormComboboxes();
+            this.ActiveControl = commentsDownloadBtn;
         }
         #endregion
 
@@ -82,6 +83,20 @@ namespace kanonierzyReader.GUI
                 }
             }
         }
+        private void IncreaseComboBoxSelectedIndex(ComboBox comboBox)
+        {
+            if (comboBox.SelectedIndex < comboBox.Items.Count - 1)
+            {
+                comboBox.SelectedIndex += 1;
+            }
+        }
+        private void DecreaseComboBoxSelectedIndex(ComboBox comboBox)
+        {
+            if (comboBox.SelectedIndex > 0)
+            {
+                comboBox.SelectedIndex -= 1;
+            }
+        }
         #endregion
 
         #region Tab Control Events
@@ -124,6 +139,8 @@ namespace kanonierzyReader.GUI
             {
                 newsListBox.SelectedIndex = 0;
                 SelectedNewsIndex = 0;
+                SelectedNewsUrl = News.ElementAt(0).Url;
+                newsListBox.Focus();
             }
         }
 
@@ -227,6 +244,76 @@ namespace kanonierzyReader.GUI
             page++;
             commentsPageTextBox.Text = page.ToString();
             commentsDownloadBtn.PerformClick();
+        }
+        #endregion
+
+        #region Form Events
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (tabControl.SelectedIndex == 0)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.F5:
+                        mainNewsRefreshBtn.PerformClick();
+                        break;
+                    case Keys.O:
+                        mainNewsBrowserBtn.PerformClick();
+                        break;
+                }
+            }
+            else if (tabControl.SelectedIndex == 1)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.D:
+                        newsDownloadBtn.PerformClick();
+                        break;
+                    case Keys.A:
+                        newsPrevPageBtn.PerformClick();
+                        break;
+                    case Keys.S:
+                        newsNextPageBtn.PerformClick();
+                        break;
+                    case Keys.O: case Keys.Enter:
+                        NewsListBox_MouseDoubleClick(null, null);
+                        break;
+                    case Keys.R:
+                        DecreaseComboBoxSelectedIndex(newsYearComboBox1);
+                        break;
+                    case Keys.F:
+                        IncreaseComboBoxSelectedIndex(newsYearComboBox1);
+                        break;
+                    case Keys.T:
+                        IncreaseComboBoxSelectedIndex(newsMonthComboBox2);
+                        break;
+                    case Keys.G:
+                        DecreaseComboBoxSelectedIndex(newsMonthComboBox2);
+                        break;
+                }
+            }
+
+            if (commentsPageTextBox.Focused == false && newsPageTextBox.Focused == false)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Space:
+                        commentsDownloadBtn.PerformClick();
+                        break;
+                    case Keys.Z:
+                        commentsPrevPageBtn.PerformClick();
+                        break;
+                    case Keys.X:
+                        commentsNextPageBtn.PerformClick();
+                        break;
+                    case Keys.Q:
+                        tabControl.SelectedIndex = 0;
+                        break;
+                    case Keys.W:
+                        tabControl.SelectedIndex = 1;
+                        break;
+                }
+            }
         }
         #endregion
     }
